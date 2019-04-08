@@ -1,0 +1,29 @@
+{
+  "name": "hex",
+  "version": "1.0.0",
+  "description": "games for brain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impedance/project-lvl1-s474.git"
+  },
+  "keywords": [
+    "brain-games",
+    "impedance",
+    "hexlet-learning-project"
+  ],
+  "author": "impedance",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/impedance/project-lvl1-s474/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/cli": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1"
+  }
+}
