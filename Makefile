@@ -5,4 +5,4 @@ start:
 publish:
 	npm publish
 lint:
-	npm eslint src/
+	npx eslint src/
