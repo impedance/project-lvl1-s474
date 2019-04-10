@@ -37,7 +37,7 @@ const evenGame = () => {
     } else {
       return console.log(`"${userReply}" is wrong answer, please try again and type "yes" or "no" as answers`);
     }
-    if (rightnessCounter === 3) {
+    if (rightnessCounter === rightAnswerLimit) {
       return console.log(`Congratulations ${userName}!`);
     }
   }
