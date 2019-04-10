@@ -41,6 +41,7 @@ const evenGame = () => {
       return console.log(`Congratulations ${userName}!`);
     }
   }
+  return 0;
 };
 
 export { evenGame, greetPlayer };
