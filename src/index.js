@@ -1,42 +1,46 @@
 import readlineSync from 'readline-sync';
 
-const greetPlayer = () => console.log('Welcome to the Brain Games!\n');
+const greetPlayer = () => console.log('Welcome to the Brain Games!');
 
 let userName = '';
 
 const helloUser = () => {
   userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${userName}!`);
+  console.log(`Hello ${userName}!\n`);
 };
 
 const evenGame = () => {
-  console.log('Answer \"yes\" if number even otherwise answer \"no\".\n');
+  console.log('Answer "yes" if number even otherwise answer "no".\n');
   helloUser();
 
-  const generateNum = () => Math.floor(Math.random() * Math.floor(20));
+  const randomLimit = 20;
+  const rightAnswerLimit = 3;
 
-  //write function for checking even
-  const checkNum = () => {};
+  const generateNum = () => Math.floor(Math.random() * Math.floor(randomLimit));
 
   let rightnessCounter = 0;
-  while (rightnessCounter < 3) {
+  while (rightnessCounter <= rightAnswerLimit) {
     const randomNum = generateNum();
-    const userReply = readlineSync.question(`Question: ${randomNum}`);
-    const isEven = checkNum(randomNum);
-    if (userReply === 'yes' || userReply === 'no') {
-      if (isEven && userReply === 'yes') {
-        rightnessCounter += 1;
-      }
+    console.log(`Question: ${randomNum}`);
+    const userReply = readlineSync.question('Your answer: ');
+    const isEven = randomNum % 2 === 0;
+    const rightAnswer = isEven ? 'yes' : 'no';
 
-      if (!isEven && userReply === 'no') {
+    if (userReply === 'yes' || userReply === 'no') {
+      if (rightAnswer === userReply) {
         rightnessCounter += 1;
+        console.log('Correct!');
+      } else {
+        console.log(`'${userReply}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+        return console.log(`Let's try again, ${userName}!`);
       }
     } else {
-      return `${userReply}Wrong answer, please try again and type \"yes\" or \"no\" as answers`;
+      return console.log(`"${userReply}" is wrong answer, please try again and type "yes" or "no" as answers`);
+    }
+    if (rightnessCounter === 3) {
+      return console.log(`Congratulations ${userName}!`);
     }
   }
-  //if right = go ahead
-  //if 3 right answer = congratulate user
-}
+};
 
-export { evenGame, greetPlayer};
+export { evenGame, greetPlayer };

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import helloUser from '..';
+import { greetPlayer } from '..';
 
-helloUser();
+greetPlayer();
