@@ -5,4 +5,4 @@
 <a href="https://travis-ci.org/impedance/project-lvl1-s474">
     <img src="https://travis-ci.com/impedance/project-lvl1-s474.svg?branch=master" /></a>
 
-<a href=https://asciinema.org/a/oDk7ni61y9yenaQYskDwqS2Sr">brain-even manual</a>
+<a href="https://asciinema.org/a/oDk7ni61y9yenaQYskDwqS2Sr">brain-even manual</a>
