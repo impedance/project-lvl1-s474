@@ -1,5 +1,3 @@
 #!/usr/bin/env node
 
-import { greetPlayer } from '..';
-
-greetPlayer();
+console.log('Welcome to the Brain Games!');

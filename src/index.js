@@ -1,29 +1,25 @@
 import readlineSync from 'readline-sync';
 
-const greetPlayer = () => console.log('Welcome to the Brain Games!');
-
-let userName = '';
+console.log('Welcome to the Brain Games!');
 
 const helloUser = () => {
-  userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${userName}!\n`);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello ${name}!\n`);
+  return name;
 };
 
 const evenGame = () => {
   console.log('Answer "yes" if number even otherwise answer "no".\n');
-  helloUser();
+  const userName = helloUser();
+  const generateNum = (min, max) => Math.floor(Math.random(min) * Math.floor(max));
 
-  const randomLimit = 20;
   const rightAnswerLimit = 3;
 
-  const generateNum = () => Math.floor(Math.random() * Math.floor(randomLimit));
-
-  let rightnessCounter = 0;
-  while (rightnessCounter <= rightAnswerLimit) {
-    const randomNum = generateNum();
-    console.log(`Question: ${randomNum}`);
+  for (let rightnessCounter = 0; rightnessCounter <= rightAnswerLimit;) {
+    const questionNum = generateNum(1, 20);
+    console.log(`Question: ${questionNum}`);
     const userReply = readlineSync.question('Your answer: ');
-    const isEven = randomNum % 2 === 0;
+    const isEven = questionNum % 2 === 0;
     const rightAnswer = isEven ? 'yes' : 'no';
 
     if (userReply === 'yes' || userReply === 'no') {
@@ -44,4 +40,4 @@ const evenGame = () => {
   return 0;
 };
 
-export { evenGame, greetPlayer };
+export default evenGame;
