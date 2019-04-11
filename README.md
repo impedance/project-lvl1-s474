@@ -6,3 +6,6 @@
     <img src="https://travis-ci.com/impedance/project-lvl1-s474.svg?branch=master" /></a>
 
 <a href="https://asciinema.org/a/oDk7ni61y9yenaQYskDwqS2Sr">brain-even manual</a>
+
+<a href="https://asciinema.org/a/OpbMwQkNS55cJ4PGYKt9kt20X">brain-calc manual</a>
+
