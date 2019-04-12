@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import evenGame from './games/even-game';
-import calcGame from './games/calc-game';
+import getCalcGameData from './games/calc-game';
 
 console.log('Welcome to the Brain Games!');
 
@@ -23,7 +23,28 @@ const wrongAnswerReply = (reply, rightAnswer, playerName) => {
   return console.log(`Let's try again, ${playerName}!`);
 };
 
+const gameEngine = () => {
+  for (let rightnessCounter = 0; rightnessCounter <= rightAnswerLimit;) {
+    const [question, rightAnswer] = getCalcGameData();
+    console.log(question);
+    const userReply = readlineSync.question('Your answer: ');
+    if (!Number.isNaN(userReply)) {
+      if (rightAnswer === Number(userReply)) {
+        rightnessCounter += 1;
+        console.log('Correct!');
+      } else {
+        return wrongAnswerReply(userReply, rightAnswer, userName);
+      }
+    } else {
+      return wrongInputReply(userReply, 'yes or no');
+    }
+    if (rightnessCounter === rightAnswerLimit) {
+      return console.log(`Congratulations ${userName}!`);
+    }
+  }
+};
+
 export {
   rightAnswerLimit, userName, generateNum,
-  evenGame, calcGame, wrongInputReply, wrongAnswerReply,
+  evenGame, calcGame, wrongInputReply, wrongAnswerReply, gameEngine
 };
