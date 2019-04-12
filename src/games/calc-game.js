@@ -13,7 +13,10 @@ const getCalcGameData = () => {
   const operation = operations[generateNum(0, 3)];
   const rightAnswer = operation[0](firstNum, secondNum);
   const question = `Question: ${firstNum} ${operation[1]} ${secondNum}`;
-  return [question, rightAnswer];
+  const answerVariant = 'numbers';
+  const inputCondition = reply => !Number.isNaN(reply);
+  const answerCondition = (answer, playerReply) => answer === Number(playerReply);
+  return [question, rightAnswer, answerVariant, inputCondition, answerCondition];
 };
 
 export default getCalcGameData;
