@@ -1,31 +1,15 @@
-import readlineSync from 'readline-sync';
-import {
-  rightAnswerLimit, userName, generateNum, wrongInputReply, wrongAnswerReply,
-} from '../index';
+import { generateNum } from '../index';
 
-const evenGame = () => {
+const getEvenGameData = () => {
   console.log('Answer "yes" if number even otherwise answer "no".\n');
-  for (let rightnessCounter = 0; rightnessCounter <= rightAnswerLimit;) {
     const questionNum = generateNum(1, 20);
     const isEven = questionNum % 2 === 0;
     const rightAnswer = isEven ? 'yes' : 'no';
-    console.log(`Question: ${questionNum}`);
-    const userReply = readlineSync.question('Your answer: ');
-    if (userReply === 'yes' || userReply === 'no') {
-      if (rightAnswer === userReply) {
-        rightnessCounter += 1;
-        console.log('Correct!');
-      } else {
-        return wrongAnswerReply(userReply, rightAnswer, userName);
-      }
-    } else {
-      return wrongInputReply(userReply, 'yes or no');
-    }
-    if (rightnessCounter === rightAnswerLimit) {
-      return console.log(`Congratulations ${userName}!`);
-    }
-  }
-  return 0;
+    const answerVariant = 'yes or no';
+    const question = `Question: ${questionNum}`;
+    const inputCondition = (reply) => reply === 'yes' || reply === 'no';
+    const answerCondition = (answer, playerReply) => answer === playerReply;
+    return [question, rightAnswer, answerVariant, inputCondition, answerCondition];
 };
 
-export default evenGame;
+export default getEvenGameData;
