@@ -1,6 +1,4 @@
 import readlineSync from 'readline-sync';
-import getEvenGameData from './games/even-game';
-//import getCalcGameData from './games/calc-game';
 
 console.log('Welcome to the Brain Games!');
 
@@ -23,9 +21,9 @@ const wrongAnswerReply = (reply, rightAnswer, playerName) => {
   return console.log(`Let's try again, ${playerName}!`);
 };
 
-const gameEngine = () => {
+const gameEngine = (getGameData) => {
   for (let rightnessCounter = 0; rightnessCounter <= rightAnswerLimit;) {
-    const [question, rightAnswer, answerVariant, inputCondition, answerCondition] = getEvenGameData();
+    const [question, rightAnswer, answerVariant, inputCondition, answerCondition] = getGameData();
     console.log(question);
     const userReply = readlineSync.question('Your answer: ');
     if (inputCondition(userReply)) {
