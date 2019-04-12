@@ -13,7 +13,7 @@ const getCalcGameData = () => {
   const operation = operations[generateNum(0, 3)];
   const rightAnswer = operation[0](firstNum, secondNum);
   const question = `Question: ${firstNum} ${operation[1]} ${secondNum}`;
-  return [question, rightAnswer]
-}
+  return [question, rightAnswer];
+};
 
 export default getCalcGameData;

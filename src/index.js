@@ -42,9 +42,10 @@ const gameEngine = () => {
       return console.log(`Congratulations ${userName}!`);
     }
   }
+  return 0;
 };
 
 export {
   rightAnswerLimit, userName, generateNum,
-  evenGame, calcGame, wrongInputReply, wrongAnswerReply, gameEngine
+  evenGame, wrongInputReply, wrongAnswerReply, gameEngine,
 };
