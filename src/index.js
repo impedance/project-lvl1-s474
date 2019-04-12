@@ -14,7 +14,16 @@ const generateNum = (min, max) => Math.floor(Math.random(min) * Math.floor(max))
 const rightAnswerLimit = 3;
 const userName = helloUser();
 
+const wrongInputReply = (reply, answerVariant) => (
+  `"${reply}" is wrong answer, please try again and type ${answerVariant} as answers`
+);
+
+const wrongAnswerReply = (reply, rightAnswer, userName) => {
+  console.log(`'${reply}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+  return console.log(`Let's try again, ${userName}!`);
+}
+
 export {
   rightAnswerLimit, userName, generateNum,
-  evenGame, calcGame,
+  evenGame, calcGame, wrongInputReply, wrongAnswerReply
 };
