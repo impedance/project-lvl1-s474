@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { rightAnswerLimit, userName, generateNum, wrongInputReply, wrongAnswerReply } from '../index';
+import {
+  rightAnswerLimit, userName, generateNum, wrongInputReply, wrongAnswerReply,
+} from '../index';
 
 const evenGame = () => {
   console.log('Answer "yes" if number even otherwise answer "no".\n');
@@ -14,10 +16,10 @@ const evenGame = () => {
         rightnessCounter += 1;
         console.log('Correct!');
       } else {
-        wrongAnswerReply(userReply, rightAnswer, userName);
+        return wrongAnswerReply(userReply, rightAnswer, userName);
       }
     } else {
-      wrongInputReply(userReply, 'yes or no');
+      return wrongInputReply(userReply, 'yes or no');
     }
     if (rightnessCounter === rightAnswerLimit) {
       return console.log(`Congratulations ${userName}!`);

@@ -15,15 +15,15 @@ const rightAnswerLimit = 3;
 const userName = helloUser();
 
 const wrongInputReply = (reply, answerVariant) => (
-  `"${reply}" is wrong answer, please try again and type ${answerVariant} as answers`
+  console.log(`"${reply}" is wrong answer, please try again and type ${answerVariant} as answers`)
 );
 
-const wrongAnswerReply = (reply, rightAnswer, userName) => {
+const wrongAnswerReply = (reply, rightAnswer, playerName) => {
   console.log(`'${reply}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-  return console.log(`Let's try again, ${userName}!`);
-}
+  return console.log(`Let's try again, ${playerName}!`);
+};
 
 export {
   rightAnswerLimit, userName, generateNum,
-  evenGame, calcGame, wrongInputReply, wrongAnswerReply
+  evenGame, calcGame, wrongInputReply, wrongAnswerReply,
 };

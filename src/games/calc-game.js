@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { rightAnswerLimit, userName, generateNum, wrongInputReply, wrongAnswerReply } from '../index';
+import {
+  rightAnswerLimit, userName, generateNum, wrongInputReply, wrongAnswerReply,
+} from '../index';
 
 const calcGame = () => {
   console.log('What is the result of the expression?\n');
@@ -19,7 +21,7 @@ const calcGame = () => {
         rightnessCounter += 1;
         console.log('Correct!');
       } else {
-        wrongAnswerReply(userReply, rightAnswer, userName);
+        return wrongAnswerReply(userReply, rightAnswer, userName);
       }
     } else {
       wrongInputReply(userReply, 'number');
