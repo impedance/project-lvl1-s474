@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { rightAnswerLimit, userName, generateNum } from '../index';
+import { rightAnswerLimit, userName, generateNum, wrongInputReply, wrongAnswerReply } from '../index';
 
 const calcGame = () => {
   console.log('What is the result of the expression?\n');
@@ -15,15 +15,14 @@ const calcGame = () => {
     console.log(`Question: ${firstNum} ${operation[1]} ${secondNum}`);
     const userReply = readlineSync.question('Your answer: ');
     if (!Number.isNaN(userReply)) {
-      if (Number(userReply) === rightAnswer) {
+      if (rightAnswer === Number(userReply)) {
         rightnessCounter += 1;
         console.log('Correct!');
       } else {
-        console.log(`'${userReply}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-        return console.log(`Let's try again, ${userName}!`);
+        wrongAnswerReply(userReply, rightAnswer, userName);
       }
     } else {
-      return console.log(`"${userReply}" is wrong answer, please try again and type 'number' as answers`);
+      wrongInputReply(userReply, 'number');
     }
     if (rightnessCounter === rightAnswerLimit) {
       return console.log(`Congratulations ${userName}!`);
