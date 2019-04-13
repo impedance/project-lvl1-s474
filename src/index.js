@@ -1,25 +1,16 @@
 import readlineSync from 'readline-sync';
 
-
-console.log('Welcome to the Brain Games!');
-const userName = readlineSync.question('May I have your name? ');
-console.log(`Hello ${userName}!\n`);
-
 const generateNum = (min, max) => Math.floor(Math.random(min) * Math.floor(max));
-const rightAnswerLimit = 3;
 
-const wrongInputReply = (reply, answerVariant) => (
-  console.log(`"${reply}" is wrong answer, please try again and type ${answerVariant} as answers`)
-);
-
-const wrongAnswerReply = (reply, rightAnswer, playerName) => {
-  console.log(`'${reply}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-  return console.log(`Let's try again, ${playerName}!`);
-};
-
-const gameEngine = (getGameData) => {
+const gameEngine = (gameData, questionGenerator) => {
+  console.log('Welcome to the Brain Games!');
+  const [gameReply, answerVariant, inputCondition, answerCondition] = gameData();
+  console.log(gameReply);
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello ${userName}!\n`);
+  const rightAnswerLimit = 3;
   for (let rightnessCounter = 0; rightnessCounter <= rightAnswerLimit;) {
-    const [question, rightAnswer, answerVariant, inputCondition, answerCondition] = getGameData();
+    const [rightAnswer, question] = questionGenerator();
     console.log(question);
     const userReply = readlineSync.question('Your answer: ');
     if (inputCondition(userReply)) {
@@ -27,10 +18,11 @@ const gameEngine = (getGameData) => {
         rightnessCounter += 1;
         console.log('Correct!');
       } else {
-        return wrongAnswerReply(userReply, rightAnswer, userName);
+        console.log(`'${userReply}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+        return console.log(`Let's try again, ${userName}!`);
       }
     } else {
-      return wrongInputReply(userReply, answerVariant);
+      return console.log(`"${userReply}" is wrong answer, please try again and type ${answerVariant} as answers`);
     }
     if (rightnessCounter === rightAnswerLimit) {
       return console.log(`Congratulations ${userName}!`);

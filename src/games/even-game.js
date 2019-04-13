@@ -1,16 +1,22 @@
-import { generateNum } from '../index';
+import { generateNum, gameEngine } from '../index';
 
-console.log('Answer "yes" if number even otherwise answer "no".\n');
+const evenGame = () => {
+  const getGameData = () => {
+    const gameReply = 'Answer "yes" if number even otherwise answer "no".\n';
+    const answerVariant = 'yes or no';
+    const inputCondition = reply => reply === 'yes' || reply === 'no';
+    const answerCondition = (answer, playerReply) => answer === playerReply;
+    return [gameReply, answerVariant, inputCondition, answerCondition];
+  };
+  const generateQuestion = () => {
+    const random = generateNum(1, 20);
+    const isEven = random % 2 === 0;
+    const rightAnswer = isEven ? 'yes' : 'no';
+    const question = `Question: ${random}`;
+    return [rightAnswer, question];
+  };
 
-const getEvenGameData = () => {
-  const random = generateNum(1, 20);
-  const isEven = random % 2 === 0;
-  const rightAnswer = isEven ? 'yes' : 'no';
-  const answerVariant = 'yes or no';
-  const question = `Question: ${random}`;
-  const inputCondition = reply => reply === 'yes' || reply === 'no';
-  const answerCondition = (answer, playerReply) => answer === playerReply;
-  return [question, rightAnswer, answerVariant, inputCondition, answerCondition];
+  gameEngine(getGameData, generateQuestion);
 };
 
-export default getEvenGameData;
+export default evenGame;
