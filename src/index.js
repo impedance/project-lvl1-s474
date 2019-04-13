@@ -22,7 +22,7 @@ const gameEngine = (gameData, questionGenerator) => {
         return console.log(`Let's try again, ${userName}!`);
       }
     } else {
-      return console.log(`"${userReply}" is wrong answer, please try again and type ${answerVariant} as answers`);
+      return console.log(`"${userReply}" is wrong answer, please try again and type ${answerVariant} as answer`);
     }
     if (rightnessCounter === rightAnswerLimit) {
       return console.log(`Congratulations ${userName}!`);
