@@ -9,4 +9,6 @@
 
 <a href="https://asciinema.org/a/OpbMwQkNS55cJ4PGYKt9kt20X">brain-calc manual</a>
 
-<a href="https://asciinema.org/a/4w4EHTivCmbfN4Xr2kdwJKGyR">brain-calc manual</a>
+<a href="https://asciinema.org/a/4w4EHTivCmbfN4Xr2kdwJKGyR">brain-gcd manual</a>
+
+<a href="https://asciinema.org/a/ZSM4zqTUB0krHSkgjJn2mCuSP">brain-progression manual</a>
