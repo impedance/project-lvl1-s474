@@ -1,17 +1,20 @@
-import { generateNum, gameEngine } from '../index';
+import gameEngine from '..';
+import { generateNum } from '../utils';
+
+const progressionLength = 10;
+const progressionStep = 2;
 
 const progressionGame = () => {
   const getGameData = () => {
-    const gameReply = 'What number is missing in the progression?\n';
+    const gameReply = 'What number is missing in the progression?';
     const answerVariant = 'number';
     const inputCondition = reply => !Number.isNaN(reply);
     const answerCondition = (answer, playerReply) => answer === Number(playerReply);
     return [gameReply, answerVariant, inputCondition, answerCondition];
   };
+
   const generateQuestion = () => {
-    const progressionLength = 10;
     const progression = [1];
-    const progressionStep = 2;
     for (let i = 1; i < progressionLength; i += 1) {
       progression.push(progression[i - 1] + progressionStep);
     }

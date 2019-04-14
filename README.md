@@ -5,13 +5,26 @@
 <a href="https://travis-ci.org/impedance/project-lvl1-s474">
     <img src="https://travis-ci.com/impedance/project-lvl1-s474.svg?branch=master" /></a>
 
+
+This is my first real project on JavaScript named 'brain-games'. There 5 mathematical games: 
+guess if number is even, 
+calc numbers, 
+find greatest common divisor,
+find number missed in arithmethical progression
+and guess if number is prime
+To play with them you need firstly install npm package globally impedance-brainy-games
+with next command
+<b>npm install -g impedance-brainy-games</b>
+then just run game as follows:
+$ brain-even
+$ brain-calc
+$ brain-gcd
+$ brain-progression
+$ brain-prime
+
+<h2>Installation and usage video for games</h2>
 <a href="https://asciinema.org/a/oDk7ni61y9yenaQYskDwqS2Sr">brain-even manual</a>
-
 <a href="https://asciinema.org/a/OpbMwQkNS55cJ4PGYKt9kt20X">brain-calc manual</a>
-
 <a href="https://asciinema.org/a/4w4EHTivCmbfN4Xr2kdwJKGyR">brain-gcd manual</a>
-
 <a href="https://asciinema.org/a/ZSM4zqTUB0krHSkgjJn2mCuSP">brain-progression manual</a>
-
 <a href="https://asciinema.org/a/1fuzm23mc02u3MXhthFEkMBJl">brain-prime manual</a>
-
