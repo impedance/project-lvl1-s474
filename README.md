@@ -16,11 +16,12 @@ To play with them you need firstly install npm package globally impedance-brainy
 with next command
 <b>npm install -g impedance-brainy-games</b>
 then just run game as follows:
-$ brain-even
-$ brain-calc
-$ brain-gcd
-$ brain-progression
-$ brain-prime
+
+<p>$ brain-even</p>
+<p>$ brain-calc</p>
+<p>$ brain-gcd</p>
+<p>$ brain-progression</p>
+<p>$ brain-prime</p>
 
 <h2>Installation and usage video for games</h2>
 <a href="https://asciinema.org/a/oDk7ni61y9yenaQYskDwqS2Sr">brain-even manual</a>
