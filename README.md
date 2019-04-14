@@ -24,8 +24,13 @@ then just run game as follows:
 <p>$ brain-prime</p>
 
 <h2>Installation and usage video for games</h2>
+
 <a href="https://asciinema.org/a/oDk7ni61y9yenaQYskDwqS2Sr">brain-even manual</a>
+
 <a href="https://asciinema.org/a/OpbMwQkNS55cJ4PGYKt9kt20X">brain-calc manual</a>
+
 <a href="https://asciinema.org/a/4w4EHTivCmbfN4Xr2kdwJKGyR">brain-gcd manual</a>
+
 <a href="https://asciinema.org/a/ZSM4zqTUB0krHSkgjJn2mCuSP">brain-progression manual</a>
+
 <a href="https://asciinema.org/a/1fuzm23mc02u3MXhthFEkMBJl">brain-prime manual</a>
