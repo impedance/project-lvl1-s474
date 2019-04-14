@@ -1,13 +1,14 @@
 import gameEngine from '..';
-import { generateNum, isEven } from '../utils';
+import { generateNum } from '../utils';
+
+const isEven = num => num % 2 === 0;
 
 const evenGame = () => {
   const getGameData = () => {
     const gameReply = 'Answer "yes" if number even otherwise answer "no".';
     const answerVariant = 'yes or no';
-    const inputCondition = reply => reply === 'yes' || reply === 'no';
-    const answerCondition = (answer, playerReply) => answer === playerReply;
-    return [gameReply, answerVariant, inputCondition, answerCondition];
+    const inputType = 'text';
+    return [gameReply, answerVariant, inputType];
   };
 
   const genAnswerQuestion = (min, max) => {
@@ -17,7 +18,7 @@ const evenGame = () => {
     return [rightAnswer, question];
   };
 
-  gameEngine(getGameData, genAnswerQuestion);
+  return gameEngine(getGameData, genAnswerQuestion);
 };
 
 export default evenGame;

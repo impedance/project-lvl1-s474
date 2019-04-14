@@ -11,9 +11,8 @@ const calcGame = () => {
   const getGameData = () => {
     const gameReply = 'What is the result of the expression?';
     const answerVariant = 'numbers';
-    const inputCondition = reply => !Number.isNaN(reply);
-    const answerCondition = (answer, playerReply) => answer === Number(playerReply);
-    return [gameReply, answerVariant, inputCondition, answerCondition];
+    const inputType = 'number';
+    return [gameReply, answerVariant, inputType];
   };
   const genAnswerQuestion = (min, max) => {
     const firstNum = generateNum(min, max);

@@ -9,9 +9,8 @@ const progressionGame = () => {
   const getGameData = () => {
     const gameReply = 'What number is missing in the progression?';
     const answerVariant = 'number';
-    const inputCondition = reply => !Number.isNaN(reply);
-    const answerCondition = (answer, playerReply) => answer === Number(playerReply);
-    return [gameReply, answerVariant, inputCondition, answerCondition];
+    const inputType = 'number';
+    return [gameReply, answerVariant, inputType];
   };
 
   const genAnswerQuestion = (min) => {

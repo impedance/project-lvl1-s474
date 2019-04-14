@@ -16,9 +16,8 @@ const primeGame = () => {
   const getGameData = () => {
     const gameReply = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     const answerVariant = 'yes or no';
-    const inputCondition = reply => reply === 'yes' || reply === 'no';
-    const answerCondition = (answer, playerReply) => answer === playerReply;
-    return [gameReply, answerVariant, inputCondition, answerCondition];
+    const inputType = 'text';
+    return [gameReply, answerVariant, inputType];
   };
 
   const genAnswerQuestion = (min, max) => {

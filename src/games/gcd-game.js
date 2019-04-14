@@ -15,9 +15,8 @@ const gcdGame = () => {
   const getGameData = () => {
     const gameReply = 'Find the greatest common divisor of given numbers.';
     const answerVariant = 'number';
-    const inputCondition = reply => !Number.isNaN(reply);
-    const answerCondition = (answer, playerReply) => answer === Number(playerReply);
-    return [gameReply, answerVariant, inputCondition, answerCondition];
+    const inputType = 'number';
+    return [gameReply, answerVariant, inputType];
   };
 
   const genAnswerQuestion = (min, max) => {
