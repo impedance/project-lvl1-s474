@@ -21,14 +21,14 @@ const primeGame = () => {
     return [gameReply, answerVariant, inputCondition, answerCondition];
   };
 
-  const generateQuestion = () => {
-    const random = generateNum(1, 100);
-    const rightAnswer = isPrime(random) ? 'yes' : 'no';
-    const question = `${random}`;
+  const genAnswerQuestion = (min, max) => {
+    const numToAsk = generateNum(min, max);
+    const rightAnswer = isPrime(numToAsk) ? 'yes' : 'no';
+    const question = `${numToAsk}`;
     return [rightAnswer, question];
   };
 
-  gameEngine(getGameData, generateQuestion);
+  gameEngine(getGameData, genAnswerQuestion);
 };
 
 export default primeGame;

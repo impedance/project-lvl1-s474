@@ -13,13 +13,13 @@ const progressionGame = () => {
     return [gameReply, answerVariant, inputCondition, answerCondition];
   };
 
-  const generateQuestion = () => {
+  const genAnswerQuestion = (min) => {
     const progression = [1];
     for (let i = 1; i < progressionLength; i += 1) {
       progression.push(progression[i - 1] + progressionStep);
     }
-    const random = generateNum(1, progressionLength);
-    const rightAnswer = progression[random];
+    const numToAsk = generateNum(min, progressionLength);
+    const rightAnswer = progression[numToAsk];
     const question = progression.map((num) => {
       if (rightAnswer === num) {
         return '..';
@@ -29,7 +29,7 @@ const progressionGame = () => {
     return [rightAnswer, question];
   };
 
-  gameEngine(getGameData, generateQuestion);
+  gameEngine(getGameData, genAnswerQuestion);
 };
 
 export default progressionGame;

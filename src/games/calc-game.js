@@ -15,16 +15,16 @@ const calcGame = () => {
     const answerCondition = (answer, playerReply) => answer === Number(playerReply);
     return [gameReply, answerVariant, inputCondition, answerCondition];
   };
-  const generateQuestion = () => {
-    const firstNum = generateNum(1, 20);
-    const secondNum = generateNum(1, 20);
+  const genAnswerQuestion = (min, max) => {
+    const firstNum = generateNum(min, max);
+    const secondNum = generateNum(min, max);
     const operation = operations[generateNum(0, operations.length)];
     const rightAnswer = operation[0](firstNum, secondNum);
     const question = `${firstNum} ${operation[1]} ${secondNum}`;
     return [rightAnswer, question];
   };
 
-  gameEngine(getGameData, generateQuestion);
+  gameEngine(getGameData, genAnswerQuestion);
 };
 
 export default calcGame;

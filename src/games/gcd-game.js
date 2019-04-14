@@ -20,15 +20,15 @@ const gcdGame = () => {
     return [gameReply, answerVariant, inputCondition, answerCondition];
   };
 
-  const generateQuestion = () => {
-    const firstNum = generateNum(1, 100);
-    const secondNum = generateNum(1, 100);
+  const genAnswerQuestion = (min, max) => {
+    const firstNum = generateNum(min, max);
+    const secondNum = generateNum(min, max);
     const rightAnswer = findDivisor(firstNum, secondNum);
     const question = `${firstNum} ${secondNum}`;
     return [rightAnswer, question];
   };
 
-  gameEngine(getGameData, generateQuestion);
+  gameEngine(getGameData, genAnswerQuestion);
 };
 
 export default gcdGame;
