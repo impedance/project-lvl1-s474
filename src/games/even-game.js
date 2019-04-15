@@ -10,14 +10,14 @@ const evenGame = () => {
     inputType: 'text',
   };
 
-  const genAnswerQuestion = (min, max) => {
-    const numToAsk = generateNum(min, max);
+  const getAnswerQuestion = () => {
+    const numToAsk = generateNum(0, 100);
     const rightAnswer = isEven(numToAsk) ? 'yes' : 'no';
     const question = `${numToAsk}`;
     return [rightAnswer, question];
   };
 
-  return gameEngine(gameDescription, genAnswerQuestion);
+  return gameEngine(gameDescription, getAnswerQuestion);
 };
 
 export default evenGame;

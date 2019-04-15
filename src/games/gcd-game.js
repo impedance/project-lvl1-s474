@@ -18,15 +18,15 @@ const gcdGame = () => {
     inputType: 'number',
   };
 
-  const genAnswerQuestion = (min, max) => {
-    const firstNum = generateNum(min, max);
-    const secondNum = generateNum(min, max);
+  const getAnswerQuestion = () => {
+    const firstNum = generateNum(0, 100);
+    const secondNum = generateNum(0, 100);
     const rightAnswer = getGreatestCommonDivisor(firstNum, secondNum);
     const question = `${firstNum} ${secondNum}`;
     return [rightAnswer, question];
   };
 
-  gameEngine(gameDescription, genAnswerQuestion);
+  gameEngine(gameDescription, getAnswerQuestion);
 };
 
 export default gcdGame;

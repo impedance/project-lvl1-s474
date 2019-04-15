@@ -12,12 +12,12 @@ const progressionGame = () => {
     inputType: 'number',
   };
 
-  const genAnswerQuestion = (min) => {
+  const genAnswerQuestion = () => {
     const progression = [];
     for (let i = 0; i < progressionLength; i += 1) {
       progression.push(start + diff * i);
     }
-    const numToAsk = generateNum(min, progressionLength);
+    const numToAsk = generateNum(0, progressionLength);
     const rightAnswer = progression[numToAsk];
     const question = progression.map((num) => {
       if (rightAnswer === num) {
