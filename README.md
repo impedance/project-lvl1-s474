@@ -13,11 +13,11 @@ with next command
 `npm install -g impedance-brainy-games`
 then just run game as follows:
 
- - $ brain-even</p>
- - $ brain-calc</p>
- - $ brain-gcd</p>
- - $ brain-progression</p>
- - $ brain-prime</p>
+ - `brain-even`
+ - `brain-calc`
+ - `brain-gcd`
+ - `brain-progression`
+ - `brain-prime`
 
 ## Installation and usage video for games</h2>
 
