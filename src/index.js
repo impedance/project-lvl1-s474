@@ -20,11 +20,11 @@ const gameEngine = (gameDescription, answerQuestionGenerator) => {
       } else {
         console.log(`'${userReply}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
         console.log(`Let's try again, ${userName}!`);
-        return 0;
+        break;
       }
     } else {
       console.log(`"${userReply}" is wrong answer, please try again and type ${answerVariant} as answer`);
-      return 0;
+      break;
     }
     if (i === answerLimit) {
       console.log(`Congratulations ${userName}!`);
