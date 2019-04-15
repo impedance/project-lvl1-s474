@@ -7,11 +7,7 @@
 
 
 This is my first real project on JavaScript named 'brain-games'. There are 5 mathematical games: 
- - guess if number is even,
- - calc numbers,
- - find greatest common divisor,
- - find number missed in arithmethical progression
- - and guess if number is prime.
+guess if number is even, calc numbers, find greatest common divisor, find number missed in arithmethical progression and guess if number is prime.
 To play with them you need firstly install npm package globally impedance-brainy-games
 with next command
 <b>npm install -g impedance-brainy-games</b>
