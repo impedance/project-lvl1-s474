@@ -18,8 +18,9 @@ const calcGame = () => {
     const firstNum = generateNum(min, max);
     const secondNum = generateNum(min, max);
     const operation = operations[generateNum(0, operations.length)];
-    const rightAnswer = operation[0](firstNum, secondNum);
-    const question = `${firstNum} ${operation[1]} ${secondNum}`;
+    const [functionOperation, operationSign] = operation;
+    const rightAnswer = functionOperation(firstNum, secondNum);
+    const question = `${firstNum} ${operationSign} ${secondNum}`;
     return [rightAnswer, question];
   };
 
