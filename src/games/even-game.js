@@ -3,9 +3,8 @@ import generateNum from '../utils';
 
 const isEven = num => num % 2 === 0;
 
-const evenGame = () => {
+const getEvenGameData = () => {
   const gameReply = 'Answer "yes" if number even otherwise answer "no".';
-
   const getAnswerQuestion = () => {
     const question = generateNum(0, 100);
     const rightAnswer = isEven(question) ? 'yes' : 'no';
@@ -15,4 +14,4 @@ const evenGame = () => {
   return gameEngine(gameReply, getAnswerQuestion);
 };
 
-export default evenGame;
+export default getEvenGameData;
