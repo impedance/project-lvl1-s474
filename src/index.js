@@ -22,7 +22,6 @@ const gameEngine = (gameReply, answerQuestionGenerator) => {
       console.log(`Congratulations ${userName}!`);
     }
   }
-  return 0;
 };
 
 export default gameEngine;
