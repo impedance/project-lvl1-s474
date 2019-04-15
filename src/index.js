@@ -14,14 +14,12 @@ const gameEngine = (gameReply, answerQuestionGenerator) => {
     if (rightAnswer === userReply) {
       console.log('Correct!');
     } else {
-      console.log(`'${userReply}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+      console.log(`'${userReply}' is wrong answer ;(. Correct answer was '${rightAnswer}`);
       console.log(`Let's try again, ${userName}!`);
-      break;
-    }
-    if (i === answerLimit) {
-      console.log(`Congratulations ${userName}!`);
+      return;
     }
   }
+  console.log(`Congratulations ${userName}`);
 };
 
 export default gameEngine;
