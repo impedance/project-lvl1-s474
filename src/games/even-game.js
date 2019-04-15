@@ -11,9 +11,8 @@ const evenGame = () => {
   };
 
   const getAnswerQuestion = () => {
-    const numToAsk = generateNum(0, 100);
-    const rightAnswer = isEven(numToAsk) ? 'yes' : 'no';
-    const question = `${numToAsk}`;
+    const question = generateNum(0, 100);
+    const rightAnswer = isEven(question) ? 'yes' : 'no';
     return [rightAnswer, question];
   };
 

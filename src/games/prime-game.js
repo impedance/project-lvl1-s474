@@ -21,9 +21,8 @@ const primeGame = () => {
   };
 
   const getAnswerQuestion = () => {
-    const numToAsk = generateNum(0, 100);
-    const rightAnswer = isPrime(numToAsk) ? 'yes' : 'no';
-    const question = `${numToAsk}`;
+    const question = generateNum(0, 100);
+    const rightAnswer = isPrime(question) ? 'yes' : 'no';
     return [rightAnswer, question];
   };
 

@@ -17,8 +17,8 @@ const progressionGame = () => {
     for (let i = 0; i < progressionLength; i += 1) {
       progression.push(start + diff * i);
     }
-    const numToAsk = generateNum(0, progressionLength);
-    const rightAnswer = progression[numToAsk];
+    const shadowedNum = generateNum(0, progressionLength);
+    const rightAnswer = progression[shadowedNum];
     const question = progression.map((num) => {
       if (rightAnswer === num) {
         return '..';
