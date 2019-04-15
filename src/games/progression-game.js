@@ -2,8 +2,6 @@ import gameEngine from '..';
 import { generateNum } from '../utils';
 
 const progressionLength = 10;
-const diff = 2;
-const start = 1;
 
 const progressionGame = () => {
   const gameDescription = {
@@ -12,7 +10,9 @@ const progressionGame = () => {
     inputType: 'number',
   };
 
-  const genAnswerQuestion = () => {
+  const getAnswerQuestion = () => {
+    const diff = generateNum(0, 10);
+    const start = generateNum(0, 10);
     const progression = [];
     for (let i = 0; i < progressionLength; i += 1) {
       progression.push(start + diff * i);
@@ -28,7 +28,7 @@ const progressionGame = () => {
     return [rightAnswer, question];
   };
 
-  gameEngine(gameDescription, genAnswerQuestion);
+  gameEngine(gameDescription, getAnswerQuestion);
 };
 
 export default progressionGame;
