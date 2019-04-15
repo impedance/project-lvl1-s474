@@ -22,4 +22,4 @@ const getCalcGameData = () => {
   gameEngine(gameReply, getAnswerQuestion);
 };
 
-export default calcGame;
+export default getCalcGameData;

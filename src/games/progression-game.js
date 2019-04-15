@@ -3,7 +3,7 @@ import generateNum from '../utils';
 
 const progressionLength = 10;
 
-const progressionGame = () => {
+const getProgressionGameData = () => {
   const gameReply = 'What number is missing in the progression?';
 
   const getAnswerQuestion = () => {
@@ -13,8 +13,8 @@ const progressionGame = () => {
     for (let i = 0; i < progressionLength; i += 1) {
       progression.push(start + diff * i);
     }
-    const shadowedNum = generateNum(0, progressionLength);
-    const rightAnswer = progression[shadowedNum];
+    const hiddenNumberIndex = generateNum(0, progressionLength);
+    const rightAnswer = progression[hiddenNumberIndex];
     const question = progression.map((num) => {
       if (rightAnswer === num) {
         return '..';
@@ -27,4 +27,4 @@ const progressionGame = () => {
   gameEngine(gameReply, getAnswerQuestion);
 };
 
-export default progressionGame;
+export default getProgressionGameData;
