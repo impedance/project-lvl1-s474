@@ -18,7 +18,7 @@ const primeGame = () => {
   const getAnswerQuestion = () => {
     const question = generateNum(0, 100);
     const rightAnswer = isPrime(question) ? 'yes' : 'no';
-    return [rightAnswer.toString(), question];
+    return [rightAnswer, question];
   };
 
   gameEngine(gameReply, getAnswerQuestion);
