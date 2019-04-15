@@ -1,5 +1,5 @@
 import gameEngine from '..';
-import { generateNum } from '../utils';
+import generateNum from '../utils';
 
 const operations = [
   [(a, b) => a + b, '+'],
@@ -8,11 +8,7 @@ const operations = [
 ];
 
 const calcGame = () => {
-  const gameDescription = {
-    gameReply: 'What is the result of the expression?',
-    answerVariant: 'numbers',
-    inputType: 'number',
-  };
+  const gameReply = 'What is the result of the expression?';
   const getAnswerQuestion = () => {
     const firstNum = generateNum(0, 100);
     const secondNum = generateNum(0, 100);
@@ -20,10 +16,10 @@ const calcGame = () => {
     const [functionOperation, operationSign] = operation;
     const rightAnswer = functionOperation(firstNum, secondNum);
     const question = `${firstNum} ${operationSign} ${secondNum}`;
-    return [rightAnswer, question];
+    return [rightAnswer.toString(), question];
   };
 
-  gameEngine(gameDescription, getAnswerQuestion);
+  gameEngine(gameReply, getAnswerQuestion);
 };
 
 export default calcGame;

@@ -1,14 +1,10 @@
 import gameEngine from '..';
-import { generateNum } from '../utils';
+import generateNum from '../utils';
 
 const progressionLength = 10;
 
 const progressionGame = () => {
-  const gameDescription = {
-    gameReply: 'What number is missing in the progression?',
-    answerVariant: 'number',
-    inputType: 'number',
-  };
+  const gameReply = 'What number is missing in the progression?';
 
   const getAnswerQuestion = () => {
     const diff = generateNum(0, 10);
@@ -25,10 +21,10 @@ const progressionGame = () => {
       }
       return num;
     }).join(' ');
-    return [rightAnswer, question];
+    return [rightAnswer.toString(), question];
   };
 
-  gameEngine(gameDescription, getAnswerQuestion);
+  gameEngine(gameReply, getAnswerQuestion);
 };
 
 export default progressionGame;

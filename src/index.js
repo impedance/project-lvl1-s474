@@ -2,9 +2,8 @@ import readlineSync from 'readline-sync';
 
 const answerLimit = 3;
 
-const gameEngine = (gameDescription, answerQuestionGenerator) => {
+const gameEngine = (gameReply, answerQuestionGenerator) => {
   console.log('Welcome to the Brain Games!');
-  const { gameReply, answerVariant } = gameDescription;
   console.log(`${gameReply}\n`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello ${userName}!\n`);

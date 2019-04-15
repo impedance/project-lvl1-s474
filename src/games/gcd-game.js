@@ -1,5 +1,5 @@
 import gameEngine from '..';
-import { generateNum } from '../utils';
+import generateNum from '../utils';
 
 const getGreatestCommonDivisor = (num1, num2) => {
   const smallest = num1 >= num2 ? num2 : num1;
@@ -12,21 +12,16 @@ const getGreatestCommonDivisor = (num1, num2) => {
 };
 
 const gcdGame = () => {
-  const gameDescription = {
-    gameReply: 'Find the greatest common divisor of given numbers.',
-    answerVariant: 'number',
-    inputType: 'number',
-  };
-
+  const gameReply = 'Find the greatest common divisor of given numbers.';
   const getAnswerQuestion = () => {
     const firstNum = generateNum(0, 100);
     const secondNum = generateNum(0, 100);
     const rightAnswer = getGreatestCommonDivisor(firstNum, secondNum);
     const question = `${firstNum} ${secondNum}`;
-    return [rightAnswer, question];
+    return [rightAnswer.toString(), question];
   };
 
-  gameEngine(gameDescription, getAnswerQuestion);
+  gameEngine(gameReply, getAnswerQuestion);
 };
 
 export default gcdGame;

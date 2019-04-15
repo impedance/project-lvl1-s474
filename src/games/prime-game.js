@@ -1,5 +1,5 @@
 import gameEngine from '..';
-import { generateNum } from '../utils';
+import generateNum from '../utils';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -14,19 +14,14 @@ const isPrime = (num) => {
 };
 
 const primeGame = () => {
-  const gameDescription = {
-    gameReply: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-    answerVariant: 'yes or no',
-    inputType: 'text',
-  };
-
+  const gameReply = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const getAnswerQuestion = () => {
     const question = generateNum(0, 100);
     const rightAnswer = isPrime(question) ? 'yes' : 'no';
-    return [rightAnswer, question];
+    return [rightAnswer.toString(), question];
   };
 
-  gameEngine(gameDescription, getAnswerQuestion);
+  gameEngine(gameReply, getAnswerQuestion);
 };
 
 export default primeGame;
