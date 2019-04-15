@@ -6,12 +6,11 @@ const diff = 2;
 const start = 1;
 
 const progressionGame = () => {
-  const getGameData = () => {
-    const gameReply = 'What number is missing in the progression?';
-    const answerVariant = 'number';
-    const inputType = 'number';
-    return [gameReply, answerVariant, inputType];
-  };
+  const gameDescription = {
+    gameReply: 'What number is missing in the progression?',
+    answerVariant: 'number',
+    inputType: 'number'
+  }
 
   const genAnswerQuestion = (min) => {
     const progression = [];
@@ -29,7 +28,7 @@ const progressionGame = () => {
     return [rightAnswer, question];
   };
 
-  gameEngine(getGameData, genAnswerQuestion);
+  gameEngine(gameDescription, genAnswerQuestion);
 };
 
 export default progressionGame;
