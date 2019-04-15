@@ -14,21 +14,20 @@ const isPrime = (num) => {
 };
 
 const primeGame = () => {
-  const getGameData = () => {
-    const gameReply = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    const answerVariant = 'yes or no';
-    const inputType = 'text';
-    return [gameReply, answerVariant, inputType];
+  const gameDescription = {
+    gameReply: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+    answerVariant: 'yes or no',
+    inputType: 'text',
   };
 
-  const genAnswerQuestion = (min, max) => {
-    const numToAsk = generateNum(min, max);
+  const getAnswerQuestion = () => {
+    const numToAsk = generateNum(0, 100);
     const rightAnswer = isPrime(numToAsk) ? 'yes' : 'no';
     const question = `${numToAsk}`;
     return [rightAnswer, question];
   };
 
-  gameEngine(getGameData, genAnswerQuestion);
+  gameEngine(gameDescription, getAnswerQuestion);
 };
 
 export default primeGame;

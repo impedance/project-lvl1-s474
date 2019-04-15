@@ -8,11 +8,10 @@ const operations = [
 ];
 
 const calcGame = () => {
-  const getGameData = () => {
-    const gameReply = 'What is the result of the expression?';
-    const answerVariant = 'numbers';
-    const inputType = 'number';
-    return [gameReply, answerVariant, inputType];
+  const gameDescription = {
+    gameReply: 'What is the result of the expression?',
+    answerVariant: 'numbers',
+    inputType: 'number',
   };
   const genAnswerQuestion = (min, max) => {
     const firstNum = generateNum(min, max);
@@ -24,7 +23,7 @@ const calcGame = () => {
     return [rightAnswer, question];
   };
 
-  gameEngine(getGameData, genAnswerQuestion);
+  gameEngine(gameDescription, genAnswerQuestion);
 };
 
 export default calcGame;

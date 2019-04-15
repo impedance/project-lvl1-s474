@@ -4,11 +4,10 @@ import { generateNum } from '../utils';
 const isEven = num => num % 2 === 0;
 
 const evenGame = () => {
-  const getGameData = () => {
-    const gameReply = 'Answer "yes" if number even otherwise answer "no".';
-    const answerVariant = 'yes or no';
-    const inputType = 'text';
-    return [gameReply, answerVariant, inputType];
+  const gameDescription = {
+    gameReply: 'Answer "yes" if number even otherwise answer "no".',
+    answerVariant: 'yes or no',
+    inputType: 'text',
   };
 
   const genAnswerQuestion = (min, max) => {
@@ -18,7 +17,7 @@ const evenGame = () => {
     return [rightAnswer, question];
   };
 
-  return gameEngine(getGameData, genAnswerQuestion);
+  return gameEngine(gameDescription, genAnswerQuestion);
 };
 
 export default evenGame;

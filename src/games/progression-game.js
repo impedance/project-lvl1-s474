@@ -9,8 +9,8 @@ const progressionGame = () => {
   const gameDescription = {
     gameReply: 'What number is missing in the progression?',
     answerVariant: 'number',
-    inputType: 'number'
-  }
+    inputType: 'number',
+  };
 
   const genAnswerQuestion = (min) => {
     const progression = [];

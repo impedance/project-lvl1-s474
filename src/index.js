@@ -3,15 +3,15 @@ import { getGameCondition } from './utils';
 
 const answerLimit = 3;
 
-const gameEngine = (gameData, answerQuestionGenerator) => {
+const gameEngine = (gameDescription, answerQuestionGenerator) => {
   console.log('Welcome to the Brain Games!');
-  const [gameReply, answerVariant, inputType] = gameData();
+  const { gameReply, answerVariant, inputType } = gameDescription;
   const [inputCondition, answerCondition] = getGameCondition(inputType);
   console.log(`${gameReply}\n`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello ${userName}!\n`);
   for (let i = 1; i <= answerLimit; i += 1) {
-    const [rightAnswer, question] = answerQuestionGenerator(1, 100);
+    const [rightAnswer, question] = answerQuestionGenerator();
     console.log(`Question: ${question}`);
     const userReply = readlineSync.question('Your answer: ');
     if (inputCondition(userReply)) {
