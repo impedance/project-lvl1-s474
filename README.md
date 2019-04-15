@@ -10,7 +10,7 @@ This is my first real project on JavaScript named 'brain-games'. There are 5 mat
 guess if number is even, calc numbers, find greatest common divisor, find number missed in arithmethical progression and guess if number is prime.
 To play with them you need firstly install npm package globally impedance-brainy-games
 with next command
-<b>npm install -g impedance-brainy-games</b>
+`npm install -g impedance-brainy-games`
 then just run game as follows:
 
  - $ brain-even</p>
@@ -21,12 +21,12 @@ then just run game as follows:
 
 ## Installation and usage video for games</h2>
 
-<a href="https://asciinema.org/a/oDk7ni61y9yenaQYskDwqS2Sr">brain-even manual</a>
+[brain-even manual](https://asciinema.org/a/oDk7ni61y9yenaQYskDwqS2Sr)
 
-<a href="https://asciinema.org/a/OpbMwQkNS55cJ4PGYKt9kt20X">brain-calc manual</a>
+[brain-calc manual](https://asciinema.org/a/OpbMwQkNS55cJ4PGYKt9kt20X)
 
-<a href="https://asciinema.org/a/4w4EHTivCmbfN4Xr2kdwJKGyR">brain-gcd manual</a>
+[brain-gcd manual](https://asciinema.org/a/4w4EHTivCmbfN4Xr2kdwJKGyR)
 
-<a href="https://asciinema.org/a/ZSM4zqTUB0krHSkgjJn2mCuSP">brain-progression manual</a>
+[brain-progression manual](https://asciinema.org/a/ZSM4zqTUB0krHSkgjJn2mCuSP)
 
-<a href="https://asciinema.org/a/1fuzm23mc02u3MXhthFEkMBJl">brain-prime manual</a>
+[brain-prime manual](https://asciinema.org/a/1fuzm23mc02u3MXhthFEkMBJl)
