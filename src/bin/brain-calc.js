@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import getCalcGameData from '../games/calc-game';
+import getCalcGameData from '../games/calc';
 
 getCalcGameData();
